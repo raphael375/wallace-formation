@@ -568,6 +568,128 @@
     .logos-band { padding: 24px 20px; }
   }
 
+  /* ─── MÉTIERS ─── */
+  .metiers-section { background: var(--white); margin: 0; max-width: 100%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .metiers-inner { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
+  .metiers-tabs {
+    display: flex; gap: 4px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px; padding-bottom: 0;
+  }
+  .metier-tab {
+    background: none; border: none; border-bottom: 3px solid transparent;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 14px; font-weight: 600; color: var(--muted);
+    padding: 12px 18px 14px; cursor: pointer; white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .metier-tab:hover { color: var(--ink); }
+  .metier-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .metier-panel { display: none; }
+  .metier-panel.active { display: block; }
+  .metier-header-row {
+    display: flex; align-items: flex-start; gap: 28px;
+    margin-bottom: 44px; padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .metier-picto-box {
+    width: 72px; height: 72px; background: var(--navy); border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; flex-shrink: 0;
+  }
+  .metier-header-text h2 {
+    font-size: clamp(24px, 2.5vw, 34px); font-weight: 800;
+    letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 8px;
+  }
+  .metier-header-text p {
+    font-size: 16px; color: var(--muted); max-width: 560px;
+    line-height: 1.65; font-weight: 400;
+  }
+  .metier-stats { display: flex; gap: 28px; margin-top: 16px; flex-wrap: wrap; }
+  .metier-stat-num {
+    font-size: 26px; font-weight: 800; color: var(--accent);
+    font-family: 'Bricolage Grotesque', sans-serif; line-height: 1;
+  }
+  .metier-stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+  .usages-subsection-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--muted); margin-bottom: 20px;
+  }
+  .usages-grid-metier {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px; margin-bottom: 52px;
+  }
+  .usage-card-metier {
+    background: var(--bg); border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .usage-card-metier:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .usage-icon-metier {
+    width: 40px; height: 40px; background: var(--white);
+    border: 1.5px solid var(--border); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 14px;
+  }
+  .usage-card-metier h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .usage-card-metier p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+  .gain-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--accent-light); color: var(--accent);
+    font-size: 12px; font-weight: 700; padding: 3px 10px;
+    border-radius: 100px; border: 1px solid #f0c4ae;
+  }
+  .cas-grid-metier {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; margin-bottom: 44px;
+  }
+  .cas-card-metier {
+    background: var(--navy); color: white;
+    border-radius: 16px; padding: 28px; position: relative; overflow: hidden;
+  }
+  .cas-card-metier::before {
+    content: '"'; position: absolute; top: -20px; right: 20px;
+    font-size: 100px; font-weight: 800; color: rgba(255,255,255,0.06); line-height: 1;
+  }
+  .cas-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: #f0b49c; margin-bottom: 12px;
+  }
+  .cas-card-metier blockquote {
+    font-family: 'Lora', serif; font-style: italic;
+    font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.85);
+    margin-bottom: 18px; position: relative; z-index: 1;
+  }
+  .cas-result {
+    background: rgba(212,65,10,0.18); border: 1px solid rgba(212,65,10,0.3);
+    border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #f5a07a;
+  }
+  .cas-result strong { display: block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #f0b49c; margin-bottom: 3px; }
+  .metier-cta-bloc {
+    background: var(--accent); border-radius: 16px; padding: 40px;
+    text-align: center; color: white;
+  }
+  .metier-cta-bloc h3 {
+    font-size: clamp(20px, 2vw, 26px); font-weight: 800;
+    letter-spacing: -0.02em; margin-bottom: 10px;
+  }
+  .metier-cta-bloc p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+  .btn-metier-cta {
+    display: inline-block; background: white; color: var(--accent);
+    font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px;
+    font-weight: 700; padding: 14px 32px; border-radius: 8px;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+  }
+  .btn-metier-cta:hover { background: var(--bg); transform: translateY(-1px); }
+  @media (max-width: 860px) {
+    .metiers-inner { padding: 60px 20px; }
+    .metier-header-row { flex-direction: column; gap: 16px; }
+    .metier-cta-bloc { padding: 28px 20px; }
+    .metiers-tabs { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+    .metiers-tabs::-webkit-scrollbar { display: none; }
+  }
+
   /* ─── ANIM ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -589,6 +711,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Wallace<span>.</span>Formation</a>
+  <a href="#metiers" style="font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;margin-right:20px;transition:color 0.2s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">L'IA pour votre métier</a>
   <a href="#contact" class="nav-cta">Demander un devis</a>
 </nav>
 
@@ -775,6 +898,227 @@
     </div>
   </div>
 </div>
+
+<!-- MÉTIERS IA -->
+<div class="metiers-section" id="metiers">
+  <div class="metiers-inner">
+    <div class="section-label">L'IA pour votre métier</div>
+    <h2 class="section-title">Votre secteur, <em>vos usages</em></h2>
+    <p class="section-sub">Chaque métier a ses propres enjeux. Découvrez ce que l'IA peut faire concrètement pour vous.</p>
+
+    <!-- TABS -->
+    <div class="metiers-tabs">
+      <button class="metier-tab active" onclick="switchMetier('immo', this)">🏗️ Immobilier</button>
+      <button class="metier-tab" onclick="switchMetier('artisan', this)">🔨 Artisans</button>
+      <button class="metier-tab" onclick="switchMetier('commercial', this)">📊 Commerciaux</button>
+      <button class="metier-tab" onclick="switchMetier('comptable', this)">🧾 Comptables</button>
+      <button class="metier-tab" onclick="switchMetier('agriculteur', this)">🌾 Agriculteurs</button>
+      <button class="metier-tab" onclick="switchMetier('rh', this)">👥 RH & DRH</button>
+    </div>
+
+    <!-- IMMOBILIER -->
+    <div class="metier-panel active" id="panel-immo">
+      <div class="metier-header-row">
+        <div class="metier-picto-box">🏗️</div>
+        <div class="metier-header-text">
+          <h2>Promoteurs & Agents Immobiliers</h2>
+          <p>De la prospection foncière à la livraison client, l'IA accélère chaque étape de votre activité immobilière.</p>
+          <div class="metier-stats">
+            <div><div class="metier-stat-num">3h</div><div class="metier-stat-label">économisées / annonce</div></div>
+            <div><div class="metier-stat-num">+40%</div><div class="metier-stat-label">appels qualifiés</div></div>
+            <div><div class="metier-stat-num">×5</div><div class="metier-stat-label">vitesse rédaction</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="usages-subsection-title">Ce que l'IA fait pour vous</div>
+      <div class="usages-grid-metier">
+        <div class="usage-card-metier"><div class="usage-icon-metier">✍️</div><h3>Annonces & descriptifs</h3><p>Générez en 30 secondes des annonces attractives, optimisées SEO, adaptées au bien et à la cible acheteur.</p><span class="gain-pill">⚡ 3h → 15 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📧</div><h3>Emails & relances automatiques</h3><p>Séquences de suivi prospects personnalisées, relances post-visite, réponses aux objections courantes.</p><span class="gain-pill">⚡ 90% temps gagné</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📄</div><h3>Analyse de documents</h3><p>Résumé de PLU, de compromis, de diagnostics techniques. Identification des points de vigilance en quelques secondes.</p><span class="gain-pill">⚡ Analyse en 2 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🗺️</div><h3>Étude de marché rapide</h3><p>Comparatifs de prix, analyse de secteur, synthèse de données pour vos investisseurs ou votre CU.</p><span class="gain-pill">⚡ Dossier en 30 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📱</div><h3>Contenu réseaux sociaux</h3><p>Posts LinkedIn, stories Instagram, newsletters clients — déclinés automatiquement depuis chaque programme.</p><span class="gain-pill">⚡ 1 bien → 10 posts</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🤝</div><h3>Préparation de négociation</h3><p>Simulation d'objections, arguments de valorisation, scénarios de contre-offre préparés à l'avance.</p><span class="gain-pill">⚡ Prêt en 10 min</span></div>
+      </div>
+      <div class="usages-subsection-title">Cas réels — ce que font vos confrères</div>
+      <div class="cas-grid-metier">
+        <div class="cas-card-metier"><p class="cas-label">Promoteur — Nantes</p><blockquote>"On lançait 3 programmes en même temps. L'IA nous a généré toutes les plaquettes commerciales, les argumentaires vendeurs et les newsletters acheteurs en une journée."</blockquote><div class="cas-result"><strong>Résultat</strong>60h de travail rédacteur économisées sur le lancement</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Agent indépendant — Pays de la Loire</p><blockquote>"Je donne à l'IA les photos et les caractéristiques du bien, elle me sort l'annonce Leboncoin, SeLoger et le post LinkedIn adaptés à chaque plateforme."</blockquote><div class="cas-result"><strong>Résultat</strong>+3 mandats/mois grâce au gain de temps</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Directeur commercial — groupe régional</p><blockquote>"On a formé toute l'équipe. Maintenant chaque vendeur prépare ses RDV acheteurs avec l'IA — objections, financement, arguments — en 15 minutes."</blockquote><div class="cas-result"><strong>Résultat</strong>Taux de transformation +22% en 3 mois</div></div>
+      </div>
+      <div class="metier-cta-bloc"><h3>Vous vendez de l'immobilier en Pays de la Loire ?</h3><p>Une journée de formation pour que toute votre équipe maîtrise ces outils.</p><a href="#contact" class="btn-metier-cta">Demander un devis intra-entreprise</a></div>
+    </div>
+
+    <!-- ARTISANS -->
+    <div class="metier-panel" id="panel-artisan">
+      <div class="metier-header-row">
+        <div class="metier-picto-box">🔨</div>
+        <div class="metier-header-text">
+          <h2>Artisans & TPE du bâtiment</h2>
+          <p>Plombiers, électriciens, peintres, menuisiers — l'IA vous libère de la paperasse pour vous concentrer sur le chantier.</p>
+          <div class="metier-stats">
+            <div><div class="metier-stat-num">5h</div><div class="metier-stat-label">admin / semaine</div></div>
+            <div><div class="metier-stat-num">+30%</div><div class="metier-stat-label">devis signés</div></div>
+            <div><div class="metier-stat-num">0€</div><div class="metier-stat-label">rédacteur externe</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="usages-subsection-title">Ce que l'IA fait pour vous</div>
+      <div class="usages-grid-metier">
+        <div class="usage-card-metier"><div class="usage-icon-metier">📝</div><h3>Rédaction de devis convaincants</h3><p>Décrivez le chantier en quelques mots, l'IA rédige un devis professionnel avec argumentaire client inclus.</p><span class="gain-pill">⚡ 1h → 5 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">💬</div><h3>Réponses clients difficiles</h3><p>Clients mécontents, retards, litiges — l'IA vous aide à formuler des réponses professionnelles et apaisantes.</p><span class="gain-pill">⚡ Gérez sans stress</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📸</div><h3>Fiches chantier & comptes-rendus</h3><p>À partir de vos notes vocales ou photos, l'IA génère le compte-rendu propre à envoyer au client.</p><span class="gain-pill">⚡ 45 min → 5 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🌐</div><h3>Mini-site vitrine professionnel</h3><p>Créez votre site internet en 1 heure avec l'IA — présentation, services, zone d'intervention, formulaire.</p><span class="gain-pill">⚡ Sans développeur</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">⭐</div><h3>Gestion des avis Google</h3><p>Réponses personnalisées aux avis (positifs comme négatifs) qui valorisent votre sérieux et professionnalisme.</p><span class="gain-pill">⚡ Image soignée</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📋</div><h3>Normes & obligations légales</h3><p>Questions sur la RE2020, les normes électriques, les garanties décennales — l'IA vous donne des réponses claires.</p><span class="gain-pill">⚡ Réponse en 30 sec</span></div>
+      </div>
+      <div class="usages-subsection-title">Cas réels — ce que font vos confrères</div>
+      <div class="cas-grid-metier">
+        <div class="cas-card-metier"><p class="cas-label">Électricien — Loire-Atlantique</p><blockquote>"Je dictais mes devis en voiture après le diagnostic. L'IA les mettait en forme proprement. J'ai multiplié par deux mon nombre de devis envoyés par semaine."</blockquote><div class="cas-result"><strong>Résultat</strong>+8 devis/semaine → CA en hausse de 25%</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Plombier chauffagiste — Vendée</p><blockquote>"Un client mécontent avait laissé un avis 1 étoile injuste. L'IA m'a aidé à rédiger une réponse factuelle et professionnelle. Il a repassé à 4 étoiles."</blockquote><div class="cas-result"><strong>Résultat</strong>Note Google remontée de 3,8 à 4,6</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Peintre décorateur — Nantes</p><blockquote>"J'utilisais un tiers de mon temps à rédiger. Devis, mails, réseaux. Maintenant c'est l'IA qui rédige, moi je contrôle en 2 minutes. Je peux prendre un chantier de plus par mois."</blockquote><div class="cas-result"><strong>Résultat</strong>+1 chantier/mois = +4 800€ de CA annuel</div></div>
+      </div>
+      <div class="metier-cta-bloc"><h3>Artisan en Pays de la Loire ?</h3><p>Formation finançable OPCO. Une journée pour gagner 5h par semaine.</p><a href="#contact" class="btn-metier-cta">Demander un devis intra-entreprise</a></div>
+    </div>
+
+    <!-- COMMERCIAUX -->
+    <div class="metier-panel" id="panel-commercial">
+      <div class="metier-header-row">
+        <div class="metier-picto-box">📊</div>
+        <div class="metier-header-text">
+          <h2>Commerciaux & Équipes de vente</h2>
+          <p>L'IA devient votre assistant commercial permanent — préparation de RDV, suivi prospects, argumentaires sur-mesure.</p>
+          <div class="metier-stats">
+            <div><div class="metier-stat-num">+35%</div><div class="metier-stat-label">taux de closing</div></div>
+            <div><div class="metier-stat-num">2h</div><div class="metier-stat-label">gagnées / jour</div></div>
+            <div><div class="metier-stat-num">×3</div><div class="metier-stat-label">vitesse prospection</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="usages-subsection-title">Ce que l'IA fait pour vous</div>
+      <div class="usages-grid-metier">
+        <div class="usage-card-metier"><div class="usage-icon-metier">🎯</div><h3>Préparation de RDV ultra-ciblée</h3><p>Donnez le nom du prospect, l'IA analyse son secteur, anticipe ses problématiques et prépare votre pitch personnalisé.</p><span class="gain-pill">⚡ Préparé en 8 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📩</div><h3>Emails de prospection qui convertissent</h3><p>Séquences d'emails personnalisés par secteur d'activité, adaptés au stade du prospect dans le cycle de vente.</p><span class="gain-pill">⚡ ×3 taux de réponse</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🛡️</div><h3>Réponses aux objections</h3><p>Préparez toutes les objections possibles avec l'IA. Entraînez-vous avant le RDV, répondez avec assurance.</p><span class="gain-pill">⚡ Plus d'objection surprise</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📊</div><h3>Comptes-rendus de réunion</h3><p>Collez le transcript de votre réunion Teams, l'IA extrait les actions, décisions et points de suivi en 30 secondes.</p><span class="gain-pill">⚡ CR en 1 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🔍</div><h3>Analyse de la concurrence</h3><p>Synthèse rapide des forces/faiblesses concurrentes pour affiner votre positionnement avant chaque proposition.</p><span class="gain-pill">⚡ Veille en temps réel</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📑</div><h3>Propositions commerciales pro</h3><p>Structurez et rédigez vos offres commerciales avec un langage adapté au vocabulaire de chaque client.</p><span class="gain-pill">⚡ 4h → 45 min</span></div>
+      </div>
+      <div class="usages-subsection-title">Cas réels — ce que font vos confrères</div>
+      <div class="cas-grid-metier">
+        <div class="cas-card-metier"><p class="cas-label">Directeur commercial — PME industrie</p><blockquote>"Avant chaque RDV grand compte, je donne à l'IA le nom de l'entreprise et du décideur. Elle me prépare une fiche avec les enjeux du secteur et 5 questions d'accroche."</blockquote><div class="cas-result"><strong>Résultat</strong>Taux de 2e RDV passé de 30% à 58%</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Commercial sédentaire — SaaS B2B</p><blockquote>"L'IA écrit mes séquences de prospection LinkedIn. Je lui donne le secteur et la taille de l'entreprise cible, elle génère 5 messages pour la séquence complète."</blockquote><div class="cas-result"><strong>Résultat</strong>+18 réunions qualifiées par mois</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Équipe commerciale — 12 personnes</p><blockquote>"Après la formation Wallace, chaque commercial utilise l'IA pour ses CRV et ses propositions. On a réduit le temps admin de 2h par jour par commercial."</blockquote><div class="cas-result"><strong>Résultat</strong>+480h/mois réinvesties en prospection</div></div>
+      </div>
+      <div class="metier-cta-bloc"><h3>Vous managez une équipe commerciale ?</h3><p>Format intra sur-mesure, adapté à vos outils CRM et secteur d'activité.</p><a href="#contact" class="btn-metier-cta">Demander un devis intra-entreprise</a></div>
+    </div>
+
+    <!-- COMPTABLES -->
+    <div class="metier-panel" id="panel-comptable">
+      <div class="metier-header-row">
+        <div class="metier-picto-box">🧾</div>
+        <div class="metier-header-text">
+          <h2>Experts-Comptables & Cabinets</h2>
+          <p>L'IA ne remplace pas votre expertise — elle supprime les tâches chronophages pour vous consacrer au conseil à valeur ajoutée.</p>
+          <div class="metier-stats">
+            <div><div class="metier-stat-num">40%</div><div class="metier-stat-label">admin économisé</div></div>
+            <div><div class="metier-stat-num">×4</div><div class="metier-stat-label">vitesse synthèse</div></div>
+            <div><div class="metier-stat-num">+15</div><div class="metier-stat-label">clients gérables / EC</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="usages-subsection-title">Ce que l'IA fait pour vous</div>
+      <div class="usages-grid-metier">
+        <div class="usage-card-metier"><div class="usage-icon-metier">📋</div><h3>Lettres de mission automatiques</h3><p>Générez des lettres de mission personnalisées pour chaque nouveau client en quelques clics, conformes à votre modèle.</p><span class="gain-pill">⚡ 45 min → 5 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📰</div><h3>Veille réglementaire synthétisée</h3><p>L'IA lit et résume les BOFiP, circulaires et actualités fiscales — et vous livre l'essentiel en langage clair.</p><span class="gain-pill">⚡ Veille en 15 min/j</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📊</div><h3>Notes de synthèse clients</h3><p>À partir des chiffres, l'IA rédige la note de synthèse annuelle avec commentaires sur les variations et alertes.</p><span class="gain-pill">⚡ 2h → 20 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🎤</div><h3>Comptes-rendus de RDV bilan</h3><p>Enregistrez votre RDV bilan, l'IA transcrit et structure les engagements, conseils et actions à suivre.</p><span class="gain-pill">⚡ CR en 3 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">💡</div><h3>Réponses aux questions courantes</h3><p>TVA, cotisations, statut juridique — l'IA prépare les éléments de réponse pour vos collaborateurs juniors.</p><span class="gain-pill">⚡ Autonomie accrue</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🚀</div><h3>Offre de conseil enrichie</h3><p>Créez des tableaux de bord, des analyses prévisionnelles et des notes de stratégie qui dépassent la mission légale.</p><span class="gain-pill">⚡ Upsell naturel</span></div>
+      </div>
+      <div class="usages-subsection-title">Cas réels — ce que font vos confrères</div>
+      <div class="cas-grid-metier">
+        <div class="cas-card-metier"><p class="cas-label">Expert-comptable — cabinet de 8 pers.</p><blockquote>"On a formé nos 3 gestionnaires. Chacun utilise l'IA pour les lettres de mission, les notes de synthèse et les réponses aux mails clients. On a repris 12 nouveaux dossiers sans embauche."</blockquote><div class="cas-result"><strong>Résultat</strong>+12 clients absorbés sans recrutement</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Collaboratrice — cabinet régional</p><blockquote>"Je colle le bilan dans l'IA et je lui demande de rédiger le commentaire de gestion pour le client. Je relis, j'ajuste. Ce qui prenait 2h me prend 20 minutes."</blockquote><div class="cas-result"><strong>Résultat</strong>60h récupérées chaque saison fiscale</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Associé — cabinet Pays de la Loire</p><blockquote>"On a créé des mémos métier par secteur client. L'IA les maintient à jour avec les dernières évolutions fiscales. Nos clients adorent cette valeur ajoutée."</blockquote><div class="cas-result"><strong>Résultat</strong>Fidélisation client renforcée, 0 résiliation</div></div>
+      </div>
+      <div class="metier-cta-bloc"><h3>Cabinet comptable en Pays de la Loire ?</h3><p>Formation finançable via le plan de formation. Intra, dans vos locaux, sur vos outils.</p><a href="#contact" class="btn-metier-cta">Demander un devis intra-entreprise</a></div>
+    </div>
+
+    <!-- AGRICULTEURS -->
+    <div class="metier-panel" id="panel-agriculteur">
+      <div class="metier-header-row">
+        <div class="metier-picto-box">🌾</div>
+        <div class="metier-header-text">
+          <h2>Agriculteurs & Exploitants</h2>
+          <p>Dossiers PAC, gestion administrative, communication — l'IA prend en charge la partie bureau pour vous laisser le terrain.</p>
+          <div class="metier-stats">
+            <div><div class="metier-stat-num">8h</div><div class="metier-stat-label">admin / mois</div></div>
+            <div><div class="metier-stat-num">0€</div><div class="metier-stat-label">prestataire rédaction</div></div>
+            <div><div class="metier-stat-num">+50%</div><div class="metier-stat-label">lisibilité dossiers</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="usages-subsection-title">Ce que l'IA fait pour vous</div>
+      <div class="usages-grid-metier">
+        <div class="usage-card-metier"><div class="usage-icon-metier">📁</div><h3>Aide aux dossiers PAC & subventions</h3><p>L'IA vous aide à structurer vos demandes, rédiger les justificatifs et comprendre les exigences administratives.</p><span class="gain-pill">⚡ Dossiers plus solides</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🌱</div><h3>Communication circuit court</h3><p>Posts Facebook/Instagram pour votre AMAP, votre marché ou votre vente directe — rédigés en quelques secondes.</p><span class="gain-pill">⚡ 1 semaine en 20 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📜</div><h3>Rédaction de contrats et baux</h3><p>Premier jet de contrats de vente, baux ruraux, conventions de mise à disposition — à faire valider par votre notaire.</p><span class="gain-pill">⚡ Base solide à moindre coût</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🔎</div><h3>Veille réglementaire agricole</h3><p>Nouvelles normes phytosanitaires, bien-être animal, éco-conditionnalités — synthétisées en langage compréhensible.</p><span class="gain-pill">⚡ Informé sans se noyer</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🧮</div><h3>Aide à la décision investissement</h3><p>Présentez votre projet à l'IA, elle vous aide à structurer le business plan et anticiper les questions du banquier.</p><span class="gain-pill">⚡ Dossier bancaire renforcé</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🎓</div><h3>Formation rapide sur nouvelles pratiques</h3><p>L'IA explique l'agroécologie, les couverts végétaux, la méthanisation — niveau adapté à vos besoins.</p><span class="gain-pill">⚡ Expert à portée de main</span></div>
+      </div>
+      <div class="usages-subsection-title">Cas réels — ce que font vos confrères</div>
+      <div class="cas-grid-metier">
+        <div class="cas-card-metier"><p class="cas-label">Maraîcher bio — Maine-et-Loire</p><blockquote>"Je n'avais pas le temps de tenir mes réseaux. Maintenant je dicte ce que j'ai fait dans la semaine pendant que je rentre des champs, l'IA transforme ça en post pour mon AMAP."</blockquote><div class="cas-result"><strong>Résultat</strong>+40 abonnés AMAP en 3 mois</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Éleveur bovins — Vendée</p><blockquote>"J'ai utilisé l'IA pour rédiger le dossier de demande de subvention pour ma stabulation. Elle a structuré les arguments, les chiffres, le plan de financement. J'ai obtenu l'aide."</blockquote><div class="cas-result"><strong>Résultat</strong>Dossier accepté — 45 000€ de subvention</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Viticulteur — Loire-Atlantique</p><blockquote>"Mes descriptions de cuvées étaient techniques et froides. L'IA les a réécrites pour le grand public. Mes ventes directes au caveau ont nettement progressé depuis."</blockquote><div class="cas-result"><strong>Résultat</strong>Ventes caveau +28% sur la saison</div></div>
+      </div>
+      <div class="metier-cta-bloc"><h3>Exploitation en Pays de la Loire ?</h3><p>Formation finançable AGEFICE ou plan de formation. Raphael se déplace chez vous.</p><a href="#contact" class="btn-metier-cta">Demander un devis intra-entreprise</a></div>
+    </div>
+
+    <!-- RH -->
+    <div class="metier-panel" id="panel-rh">
+      <div class="metier-header-row">
+        <div class="metier-picto-box">👥</div>
+        <div class="metier-header-text">
+          <h2>RH & Directeurs des Ressources Humaines</h2>
+          <p>Recrutement, onboarding, communication interne, juridique RH — l'IA transforme chaque processus RH en quelques minutes.</p>
+          <div class="metier-stats">
+            <div><div class="metier-stat-num">60%</div><div class="metier-stat-label">temps recrutement gagné</div></div>
+            <div><div class="metier-stat-num">×2</div><div class="metier-stat-label">qualité offres d'emploi</div></div>
+            <div><div class="metier-stat-num">-70%</div><div class="metier-stat-label">rédaction procédures</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="usages-subsection-title">Ce que l'IA fait pour vous</div>
+      <div class="usages-grid-metier">
+        <div class="usage-card-metier"><div class="usage-icon-metier">📢</div><h3>Offres d'emploi attractives</h3><p>Rédigez des offres inclusives, ciblées, qui reflètent votre culture d'entreprise et maximisent les candidatures qualifiées.</p><span class="gain-pill">⚡ 1h → 10 min</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🧩</div><h3>Trames d'entretien structurées</h3><p>Générez les questions comportementales, techniques et de mise en situation adaptées à chaque poste.</p><span class="gain-pill">⚡ Entretien équitable</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📚</div><h3>Livrets d'accueil & onboarding</h3><p>Créez un parcours d'intégration complet — livret, checklist, plan de formation — pour chaque nouveau poste.</p><span class="gain-pill">⚡ 2 jours → 3h</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">⚖️</div><h3>Procédures RH & documentation</h3><p>Règlements intérieurs, notes de service, politiques de télétravail — rédigés et mis à jour en quelques minutes.</p><span class="gain-pill">⚡ Conformité simplifiée</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">📣</div><h3>Communication interne engageante</h3><p>Newsletters internes, annonces RH, messages de management — adaptés au ton et à la culture de votre entreprise.</p><span class="gain-pill">⚡ Ton juste à coup sûr</span></div>
+        <div class="usage-card-metier"><div class="usage-icon-metier">🔬</div><h3>Analyse de données RH</h3><p>Interprétation des résultats d'enquêtes internes, turnover, absentéisme — synthèse actionnable pour le CODIR.</p><span class="gain-pill">⚡ Insights en 10 min</span></div>
+      </div>
+      <div class="usages-subsection-title">Cas réels — ce que font vos confrères</div>
+      <div class="cas-grid-metier">
+        <div class="cas-card-metier"><p class="cas-label">DRH — PME 80 salariés, Loire-Atlantique</p><blockquote>"On recrutait 3 profils différents en même temps. L'IA a généré les 3 offres, les trames d'entretien et les tests de mise en situation en une après-midi. Avant ça prenait une semaine."</blockquote><div class="cas-result"><strong>Résultat</strong>Process recrutement réduit de 3 semaines à 10 jours</div></div>
+        <div class="cas-card-metier"><p class="cas-label">RRH — groupe industriel régional</p><blockquote>"Notre livret d'accueil avait 4 ans. L'IA l'a intégralement repris, modernisé, structuré par profil de poste. Ce qui semblait impossible à faire faute de temps a été bouclé en 2 jours."</blockquote><div class="cas-result"><strong>Résultat</strong>Satisfaction onboarding +35 pts en enquête interne</div></div>
+        <div class="cas-card-metier"><p class="cas-label">Responsable RH — secteur médico-social</p><blockquote>"Je lui donne les résultats bruts de notre baromètre social et elle me sort une synthèse claire avec les points d'alerte et les axes de progression. Je gagne 3h sur chaque restitution CODIR."</blockquote><div class="cas-result"><strong>Résultat</strong>Restitutions CODIR 3× plus rapides et percutantes</div></div>
+      </div>
+      <div class="metier-cta-bloc"><h3>Vous gérez les RH d'une entreprise en Pays de la Loire ?</h3><p>Formation intra finançable sur le plan de formation. Pour vous et toute votre équipe RH.</p><a href="#contact" class="btn-metier-cta">Demander un devis intra-entreprise</a></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function switchMetier(id, btn) {
+    document.querySelectorAll('.metier-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.metier-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
 
 <!-- TEMOIGNAGES -->
 <div class="temoignages-bg">
