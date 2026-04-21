@@ -679,17 +679,14 @@ footer a:hover { color:rgba(255,255,255,.7); }
         <text x="8" y="111" fill="rgba(255,255,255,.18)" font-size="9" font-family="Montserrat,sans-serif">25%</text>
         <!-- Area fill -->
         <path id="curve-area" d="M 30,155 Q 120,148 225,140 Q 340,128 450,105 Q 560,80 675,55 Q 760,36 870,18 L 870,160 L 30,160 Z" fill="rgba(217,48,37,.12)" opacity="0">
-          <animate attributeName="opacity" from="0" to="1" dur="1.2s" begin="0.3s" fill="freeze"/>
         </path>
         <!-- Curve line -->
         <path id="curve-line" d="M 30,155 Q 120,148 225,140 Q 340,128 450,105 Q 560,80 675,55 Q 760,36 870,18"
           fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round"
           stroke-dasharray="1200" stroke-dashoffset="1200">
-          <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="1.8s" begin="0.1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
         </path>
         <!-- Dot final -->
-        <circle cx="870" cy="18" r="0" fill="var(--red)">
-          <animate attributeName="r" from="0" to="5" dur="0.3s" begin="1.8s" fill="freeze"/>
+        <circle id="curve-dot" cx="870" cy="18" r="0" fill="var(--red)">
         </circle>
         <text x="820" y="13" fill="rgba(255,255,255,.7)" font-size="10" font-family="Montserrat,sans-serif" font-weight="800">+68%</text>
       </svg>
@@ -1022,7 +1019,9 @@ document.querySelector('.f-btn').addEventListener('click',function(){
 
 // ─── INTERSECTION OBSERVER pour stats
 const statsSection = document.querySelector('.stats-bg');
+const curveWrap = document.querySelector('.curve-wrap');
 let statsAnimated = false;
+let curveAnimated = false;
 
 function animateCounter(el, target, duration, isFloat) {
   const start = performance.now();
@@ -1060,6 +1059,37 @@ function animateBigCounter() {
   requestAnimationFrame(update);
 }
 
+function animateCurve() {
+  const line = document.getElementById('curve-line');
+  const area = document.getElementById('curve-area');
+  const dot  = document.getElementById('curve-dot');
+  if (!line) return;
+
+  const totalLength = 1200;
+  const duration = 3500;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // ease out cubic
+    const ease = 1 - Math.pow(1 - progress, 3);
+    line.style.strokeDashoffset = totalLength * (1 - ease);
+
+    if (area) area.style.opacity = ease * 1;
+
+    if (dot) {
+      // dot appears in last 15% of animation
+      const dotProgress = Math.max(0, (progress - 0.85) / 0.15);
+      dot.setAttribute('r', (dotProgress * 5).toFixed(2));
+    }
+
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// Observer for stats counters + bars
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting && !statsAnimated) {
@@ -1075,7 +1105,18 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.2 });
 
+// Separate observer for curve — triggers when curve enters viewport
+const curveObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !curveAnimated) {
+      curveAnimated = true;
+      animateCurve();
+    }
+  });
+}, { threshold: 0.4 });
+
 if (statsSection) observer.observe(statsSection);
+if (curveWrap) curveObserver.observe(curveWrap);
 </script>
 </body>
 </html>
